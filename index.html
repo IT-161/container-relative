@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Container Queries and :has()</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="workspace-grid">
+
+    <!-- Sidebar Container -->
+    <aside class="sidebar-region">
+      <h2 class="region-title">Sidebar Slot</h2>
+
+      <div class="notification-container">
+
+        <!-- Card in narrow sidebar context -->
+        <article class="notification-card">
+
+          <div class="card-visual">
+            <span class="icon">⚙️</span>
+          </div>
+
+          <div class="card-details">
+            <h3 class="card-title">System Backup Completed</h3>
+
+            <p class="card-message">
+              Your weekly scheduled system backup finished without warnings.
+            </p>
+          </div>
+
+          <div class="card-actions">
+            <label class="action-check">
+              <input
+                type="checkbox"
+                class="archive-toggle"
+              >
+              <span class="label-text">Archive</span>
+            </label>
+          </div>
+
+        </article>
+
+      </div>
+    </aside>
+
+
+    <!-- Main Dynamic Feed Region -->
+    <main class="main-region">
+      <h2 class="region-title">Main Dynamic Slot</h2>
+
+      <div class="notification-container">
+
+        <!-- Identical Card in wide main region context -->
+        <article class="notification-card">
+
+          <div class="card-visual">
+            <span class="icon">⚙️</span>
+          </div>
+
+          <div class="card-details">
+            <h3 class="card-title">System Backup Completed</h3>
+
+            <p class="card-message">
+              Your weekly scheduled system backup finished without warnings.
+            </p>
+          </div>
+
+          <div class="card-actions">
+            <label class="action-check">
+              <input
+                type="checkbox"
+                class="archive-toggle"
+              >
+              <span class="label-text">Archive</span>
+            </label>
+          </div>
+
+        </article>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

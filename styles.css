@@ -1,0 +1,170 @@
+/* =========================
+   BASIC PAGE STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+
+/* =========================
+   WORKSPACE LAYOUT
+========================= */
+
+.workspace-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.sidebar-region,
+.main-region {
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 1rem;
+}
+
+.region-title {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+}
+
+
+/* =========================
+   PHASE 1:
+   CONTAINER CONTEXT
+========================= */
+
+.notification-container {
+  container-type: inline-size;
+}
+
+
+/* =========================
+   PHASE 2:
+   DEFAULT NARROW CARD
+========================= */
+
+.notification-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1.25rem;
+
+  background: #ffffff;
+
+  border: 2px solid #cbd5e1;
+  border-radius: 0.85rem;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.card-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.5rem;
+  height: 3.5rem;
+
+  background: #dbeafe;
+  border-radius: 0.75rem;
+}
+
+.icon {
+  font-size: 1.75rem;
+}
+
+.card-details {
+  flex: 1;
+}
+
+.card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card-message {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+}
+
+.action-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.archive-toggle {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+
+/* =========================
+   PHASE 2:
+   CONTAINER QUERY
+========================= */
+
+@container (min-width: 500px) {
+
+  .notification-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .card-visual {
+    flex-shrink: 0;
+  }
+
+  .card-actions {
+    margin-inline-start: auto;
+  }
+
+}
+
+
+/* =========================
+   PHASE 3:
+   STATE-AWARE :has()
+========================= */
+
+.notification-card:has(.archive-toggle:checked) {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+  opacity: 0.7;
+}
+
+.notification-card:has(.archive-toggle:checked) .card-title {
+  color: #64748b;
+}
+
+.notification-card:has(.archive-toggle:checked) .card-message {
+  color: #94a3b8;
+}
