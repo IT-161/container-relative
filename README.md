@@ -1,16 +1,22 @@
 # Interactive Notification Workspace
 
-This project demonstrates modern responsive CSS using **Container Queries** and the **`:has()` pseudo-class**.
+## Overview
+
+This project demonstrates modern CSS using **Container Queries** and the **`:has()` selector**. The notification cards adapt based on the size of their individual containers rather than the browser window.
 
 ## Features
 
-* Uses `container-type: inline-size` to create container contexts.
-* Uses `@container (min-width: 500px)` to change notification cards from a stacked layout to a horizontal layout based on their container size.
-* Uses `:has()` to detect when the Archive checkbox is selected and visually dim the archived card.
-* Uses identical card HTML in both the sidebar and main content area.
-* Uses **no JavaScript** and **no viewport `@media` queries** for card responsiveness.
+- Uses `container-type: inline-size` to create container contexts.
+- Cards stack vertically in narrow containers.
+- Cards switch to a horizontal layout at `500px` using `@container`.
+- Uses `:has()` to detect when the **Archive** checkbox is selected.
+- Archived cards automatically change appearance.
+- Uses no JavaScript or viewport-based `@media` queries for card sizing.
 
-## Files
+## How to Run
 
-* `index.html` — Contains the semantic structure of the notification workspace.
-* `styles.css` — Contains the layout, container query, and state-aware styling.
+Open `index.html` in a web browser or view the project through its GitHub Pages link.
+
+## AI Assistance
+
+AI was used to help generate and organize the CSS based on the assignment requirements, including the container query and `:has()` state styling.
